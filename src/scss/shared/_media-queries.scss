@@ -1,0 +1,62 @@
+@use "sass:map";
+
+//general breakpoints
+$screen-sm1: 320px;
+$screen-sm2: 375px;
+$screen-sm3: 425px;
+
+//design breakpoints
+$screen-sm4: 430px;
+
+//general breakpoints
+$screen-md1: 768px;
+$screen-md2: 1024px;
+$screen-md3: 1280px;
+$screen-lg1: 1440px;
+
+//design breakpoints
+$screen-lg2: 1728px;
+
+//general breakpoints
+$screen-lg3: 1920px;
+$screen-lg4: 2560px;
+
+/* Media query mixins */
+// Min media queries
+@mixin min-sm4 {
+    @media (min-width: $screen-sm4) { @content; }
+}
+
+@mixin min-md1 {
+    @media (min-width: $screen-md1) { @content; }
+}
+
+@mixin min-lg2 {
+    @media (min-width: $screen-lg2) { @content; }
+}
+
+// Max media queries
+@mixin max-lg2 {
+    @media (max-width: #{$screen-lg2 - 1}) { @content; }
+}
+
+@mixin max-md3 {
+    @media (max-width: #{$screen-md3 - 1}) { @content; }
+}
+
+@mixin max-md2 {
+    @media (max-width: #{$screen-md2 - 1}) { @content; }
+}
+
+@mixin max-md1 {
+    @media (max-width: #{$screen-md1 - 1}) { @content; }
+}
+
+@mixin max-sm4 {
+    @media (max-width: #{$screen-sm4 - 1}) { @content; }
+}
+
+/* Media query range - sm */
+@mixin min-md1-max-md2 {
+    @media only screen and (min-width: $screen-md1) and (max-width: #{$screen-md2 - 1}) { @content; }
+}

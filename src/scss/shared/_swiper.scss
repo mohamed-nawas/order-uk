@@ -1,0 +1,17 @@
+@use "../shared/media-queries" as screens;
+
+.swiper {
+    &-slide { width: auto; height: auto !important; /* display: flex !important; */ }
+    &-button-prev, &-button-next {
+        color: transparent;
+        top: unset;
+        left: unset;
+        right: unset;
+        bottom: unset;
+        transform: unset;
+        margin: unset;
+        z-index: unset;
+    }
+    &-button-prev { margin-right: clamp(12px, 0.83vw, 16px); }
+    &-items-wrapper { @include screens.max-md { display: flex; justify-content: center; }}
+}

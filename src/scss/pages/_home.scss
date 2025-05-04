@@ -1,0 +1,107 @@
+@use "../shared/media-queries" as screens;
+
+.olk-home {
+    background-color: var(--color-absolute-white);
+    &__banner {
+        position: relative;
+        border-radius: 12px;//**
+        background-color: var(--color-gray-06);
+        border: 1px solid var(--color-black-20-opacity);
+        width: 100%;
+        height: 610px;//**
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 3vw;
+        @include screens.max-md1 { 
+            margin-top: 40px;
+            height: 283px; 
+            background-color: var(--color-gray-02-opacity-90); 
+            border: 1px solid var(--color-black-10-opacity); 
+        }
+        &__content-container {
+            position: relative;
+            z-index: 2;
+            &__slug {
+                font-weight: 400;
+                color: var(--color-black-02);
+                line-height: clamp(35px, 3.75vw, 66px);
+                font-size: clamp(13px, 1vw, 16px);
+            }
+            &__title {
+                font-weight: 600;
+                color: var(--color-black-02);
+                line-height: 34px;
+                font-size: clamp(34px, 3vw, 54px);
+                margin-bottom: clamp(7px, 1.75vw, 30px);
+                &-styled { color: var(--color-orange); }
+            }
+            @include screens.max-lg2 { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
+            @include screens.max-md1 { 
+                text-align: center; 
+                text-shadow: none; 
+                &__slug { font-size: clamp(10px, 0.83vw, 13px); line-height: clamp(25px, 2.5vw, 35px); }
+                &__title { font-size: clamp(25px, 2.5vw, 34px); line-height: clamp(25px, 2.5vw, 34px); }
+            }
+            &__input-container {
+                position: relative;
+                display: inline-block;
+                &__input {
+                    background-color: var(--color-absolute-white);
+                    border: 1px solid var(--color-black-40-opacity);
+                    border-radius: 120px;//**
+                    width: clamp(240px, 21.5vw, 373px);
+                    height: clamp(29px, 7.42vw, 57px);//**
+                    text-align: left;
+                    padding-left: 1.5vw;
+                    font-weight: 400;
+                    font-size: clamp(10px, 1.95vw, 15px);
+                    color: var(--color-black-80-opacity);
+                }
+                &__btn-small {
+                    @include screens.min-md1 { display: none; }
+                    width: clamp(29px, 7.42vw, 57px);//**
+                    aspect-ratio: 1;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: var(--color-orange);
+                    border-radius: 50%;
+                    border-color: transparent;
+                    display: grid;
+                    place-items: center;
+                    img { width: clamp(11px, 4.42vw, 34px); aspect-ratio: 1; }
+                }
+                &__btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: var(--color-orange);
+                    border-radius: 120px;//**
+                    width: clamp(57px, 11vw, 188px);//**
+                    height: 57px;//**
+                    border-color: transparent;
+                    font-weight: 700;
+                    color: var(--color-absolute-white);
+                }
+                @include screens.max-md1 {
+                    &__input, &__btn-small { margin-top: clamp(10px, 2.6vw, 20px); }
+                    &__input { border: none; }
+                    &__btn { display: none; }
+                }
+            }
+        }
+        &__bg-image {
+            @include screens.max-md1 { display: none; }
+            z-index: 1;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 92%;
+            width: calc(66% + (34% * ((1728px - 100vw) / 528)));
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 0 0 12px;//**
+        }
+    }
+}

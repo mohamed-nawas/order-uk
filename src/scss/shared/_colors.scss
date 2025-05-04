@@ -1,0 +1,50 @@
+:root {
+    --color-absolute-white: #FFFFFF;
+    --color-white-10-opacity: rgba(255, 255, 255, 0.1);
+    --color-white-20-opacity: rgba(255, 255, 255, 0.2);
+    --color-pink: #FFB1B1;
+    --color-red: #E12B25;
+    --color-orange: #FC8A06;
+    --color-orange-opacity-80: rgba(252, 138, 6, 0.8);
+    --color-black-01: #000000;
+    --color-black-02: #03081F;
+    --color-black-03: #252525;
+    --color-black-04: #212121;
+    --color-black-05: #282828;
+    --color-black-02-opacity-90: rgba(3, 8, 31, 0.9);
+    --color-black-02-opacity-97: rgba(3, 8, 31, 0.97);
+    --color-black-10-opacity: rgba(0, 0, 0, 0.1);
+    --color-black-11-opacity: rgba(0, 0, 0, 0.11);
+    --color-black-20-opacity: rgba(0, 0, 0, 0.2);
+    --color-black-40-opacity: rgba(0, 0, 0, 0.4);
+    --color-black-60-opacity: rgba(0, 0, 0, 0.6);
+    --color-black-80-opacity: rgba(0, 0, 0, 0.8);
+    --color-gray-01: #D9D9D9;
+    --color-gray-02: #A6A6A6;
+    --color-gray-03: #F8F8F8;
+    --color-gray-04: #FAFAFA;
+    --color-gray-05: #F5F5F5;
+    --color-gray-06: #FDFDFD;
+    --color-gray-06: #FBFBFB;
+    --color-gray-07: #F3F3F3;
+    --color-gray-08: #8E8E8E;
+    --color-gray-09: #CFCFCF;
+    --color-gray-10: #F6F6F6;
+    --color-gray-11: #BCBCBC;
+    --color-gray-12: #EEEEEE;
+    --color-gray-13: #F9F9F9;
+    --color-gray-14: #DEDEDE;
+    --color-gray-15: #EFEFEF;
+    --color-gray-02-opacity-90: #E2E2E2;
+    --color-gray-01-opacity-90: rgba(244, 244, 244, 0.9)
+    --color-green-01: #00F076;
+    --color-green-02: #028643;
+    --color-green-03: #049801;
+    --color-green-04: #47F543;
+
+    --gradient-white-black: linear-gradient(to right, var(--color-absolute-white) 0%, var(--color-black-02) 58%, var(--color-black-02) 100%);
+    --gradient-lightgray-darkgray: linear-gradient(to right, #EEEEEE 0%, #E0E1DC 100%);
+    --gradient-darkblue-lightblue: linear-gradient(to right, #00C3FF 4%, #00E1FF 98%);
+    --gradient-yellow-orange: linear-gradient(to right, #FDDE31 0%, #FABC31 40%, #F8A431 77%, #F79B31 100%);
+    --gradient-lightred-darkred: linear-gradient(to right, #FF3A44 0%, #C4206D 100%);
+}
