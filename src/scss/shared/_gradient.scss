@@ -1,0 +1,25 @@
+
+@mixin gradient-white-black($angle) {
+    background: linear-gradient($angle, var(--color-absolute-white) 0%, var(--color-black-02) 58%, var(--color-black-02) 100%);
+}
+
+@mixin gradient-lightgray-darkgray($angle) {
+    background: linear-gradient($angle, #EEEEEE 0%, #E0E1DC 100%);
+}
+
+@mixin gradient-darkblue-lightblue($angle) {
+    background: linear-gradient($angle, #00C3FF 4%, #00E1FF 98%);
+}
+
+@mixin gradient-yellow-orange($angle) {
+    background: linear-gradient($angle, #FDDE31 0%, #FABC31 40%, #F8A431 77%, #F79B31 100%);
+}
+
+@mixin gradient-lightred-darkred($angle) {
+    background: linear-gradient($angle, #FF3A44 0%, #C4206D 100%);
+}
+
+//background colors
+@mixin gradient-lightgray-darkgray-bg-color($angle) {
+    background-color: linear-gradient($angle, #EEEEEE 0%, #E0E1DC 100%);
+}

@@ -6,6 +6,7 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    background-color: var(--color-gray-02-opacity-90);//**
     &__ads-container {
         @include screens.min-md1-max-md2 { display: none; }
         width: 100%;
@@ -150,6 +151,7 @@
                     color: var(--color-black-01);
                     // font-size: 18px;//**
                     font-size: 1vw;
+                    @include screens.max-md1 { font-size: 2.34vw; }
                     font-weight: 500;
                 }
                 &:hover { background-color: var(--color-orange); a { background-color: transparent; color: var(--color-absolute-white);} }

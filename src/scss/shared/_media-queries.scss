@@ -31,6 +31,10 @@ $screen-lg4: 2560px;
     @media (min-width: $screen-md1) { @content; }
 }
 
+@mixin min-md2 {
+    @media (min-width: $screen-md2) { @content; }
+}
+
 @mixin min-lg2 {
     @media (min-width: $screen-lg2) { @content; }
 }
