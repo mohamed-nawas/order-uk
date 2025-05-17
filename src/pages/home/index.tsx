@@ -43,22 +43,14 @@ export default function Home() {
                             <input type="text" className="olk-home__banner__content-container__input-container__input" placeholder="e.g. EC4R 3TE" />
                             <div className="olk-home__banner__content-container__input-container__btn-small">
                                 {
-                                    process.env.NODE_ENV === 'production' ? (
-                                        <img src={`${import.meta.env.BASE_URL}/icons/right-arrow-ico.png`} alt="Right Arrow" />
-                                    ) : (
-                                        <img src="icons/right-arrow-ico.png" alt="Right Arrow" />
-                                    )
+                                    <img alt='Right Arrow' src={isProd ? `${basePath}/icons/right-arrow-ico.png` : 'icons/right-arrow-ico.png'} />
                                 }
                             </div>
                             <input type="button" value="Search" className="olk-home__banner__content-container__input-container__btn font-16" />
                         </div>
                     </div>
                     {
-                        process.env.NODE_ENV === 'production' ? (
-                            <img src={`${import.meta.env.BASE_URL}/images/banner-bg-image.png`} alt="Banner Bg Image" className="olk-home__banner__bg-image" />
-                        ) : (
-                            <img src="images/banner-bg-image.png" alt="Banner Bg Image" className="olk-home__banner__bg-image" />
-                        )
+                        <img className='olk-home__banner__bg-image' alt='Banner Bg Image' src={isProd ? `${basePath}/images/banner-bg-image.png` : 'images/banner-bg-image.png'} />
                     }
                 </div>
                 <div className="olk-home__discount-restaurant-section">
@@ -77,40 +69,26 @@ export default function Home() {
                     </div>
                     <div className="olk-home__discount-restaurant-section__content-container">
                         {
-                            process.env.NODE_ENV === 'production' ? (
-                                discounts.map((discount) => (
-                                    <div className='olk-home__discount-restaurant-section__content-container__item' style={{ '--bg-desktop': `url(${import.meta.env.BASE_URL}/${discount.desktopImgPath})`, '--bg-mobile': `url(${import.meta.env.BASE_URL}/${discount.mobileImgPath})` } as React.CSSProperties} key={discount.id}>
-                                        <div className="olk-home__discount-restaurant-section__content-container__item__discount-container"><p className="olk-home__discount-restaurant-section__content-container__item__discount-container__value font-18">{discount.discount}</p></div>
-                                        <h4 className="olk-home__discount-restaurant-section__content-container__item__title font-18">{discount.title}</h4>
-                                        <p className="olk-home__discount-restaurant-section__content-container__item__slug font-24">{discount.slug}</p>
-                                    </div>
-                                ))
-                            ) : (
-                                discounts.map((discount) => (
-                                    <div className='olk-home__discount-restaurant-section__content-container__item' style={{ '--bg-desktop': `url(${discount.desktopImgPath})`, '--bg-mobile': `url(${discount.mobileImgPath})` } as React.CSSProperties} key={discount.id}>
-                                        <div className="olk-home__discount-restaurant-section__content-container__item__discount-container"><p className="olk-home__discount-restaurant-section__content-container__item__discount-container__value font-18">{discount.discount}</p></div>
-                                        <h4 className="olk-home__discount-restaurant-section__content-container__item__title font-18">{discount.title}</h4>
-                                        <p className="olk-home__discount-restaurant-section__content-container__item__slug font-24">{discount.slug}</p>
-                                    </div>
-                                ))
-                            )
+                            discounts.map((discount) => (
+                                <div className='olk-home__discount-restaurant-section__content-container__item' style={{ '--bg-desktop': `url('${isProd ? basePath + discount.desktopImgPath : discount.desktopImgPath}')`, '--bg-mobile': `url('${isProd ? basePath + discount.mobileImgPath : discount.mobileImgPath}')` } as React.CSSProperties} key={discount.id}>
+                                    <div className="olk-home__discount-restaurant-section__content-container__item__discount-container"><p className="olk-home__discount-restaurant-section__content-container__item__discount-container__value font-18">{discount.discount}</p></div>
+                                    <h4 className="olk-home__discount-restaurant-section__content-container__item__title font-18">{discount.title}</h4>
+                                    <p className="olk-home__discount-restaurant-section__content-container__item__slug font-24">{discount.slug}</p>
+                                </div>
+                            ))
                         }
                     </div>
                 </div>
             </div>
             <div className="olk-home__category-section">
                 <div className="container-fluid">
-                    <h4 className="olk-home__category-section__title font-32">Orderlk Popular Categories</h4>
+                    <h4 className="olk-home__category-section__title font-32">OrderUK Popular Categories</h4>
                     <div className="olk-home__category-section__content-container">
                         {
                             categories.map((category) => (
                                 <div className="olk-home__category-section__content-container__item-container" key={category.id}>
                                     {
-                                        process.env.NODE_ENV === 'production' ? (
-                                            <img src={`${import.meta.env.BASE_URL}/${category.imgPath}`} alt={category.imgAlt} className="olk-home__category-section__content-container__item-container__img" />
-                                        ) : (
-                                            <img src={category.imgPath} alt={category.imgAlt} className="olk-home__category-section__content-container__item-container__img" />
-                                        )
+                                        <img className='olk-home__category-section__content-container__item-container__img' alt={category.imgAlt} src={isProd ? `${basePath}/${category.imgPath}` : `${category.imgPath}`} />
                                     }
                                     <h5 className="olk-home__category-section__content-container__item-container__title font-18">{category.title}</h5>
                                     <p className="olk-home__category-section__content-container__item-container__slug font-13">{category.slug}</p>
@@ -128,11 +106,7 @@ export default function Home() {
                             restaurents.map((restaurent) => (
                                 <div className="olk-home__restaurent-section__content-container__item-container" key={restaurent.id}>
                                     {
-                                        process.env.NODE_ENV === 'production' ? (
-                                            <img src={`${import.meta.env.BASE_URL}/${restaurent.imgPath}`} alt={restaurent.imgAlt} className="olk-home__restaurent-section__content-container__item-container__img" />
-                                        ) : (
-                                            <img src={restaurent.imgPath} alt={restaurent.imgAlt} className="olk-home__restaurent-section__content-container__item-container__img" />
-                                        )
+                                        <img className='olk-home__restaurent-section__content-container__item-container__img' alt={restaurent.imgAlt} src={isProd ? `${basePath}/${restaurent.imgPath}` : `${restaurent.imgPath}`} />
                                     }
                                     <h5 className="olk-home__restaurent-section__content-container__item-container__title font-18">{restaurent.title}</h5>
                                 </div>
@@ -158,7 +132,7 @@ export default function Home() {
                 <div className="olk-home__get-started-section">
                     {
                         started.map((item, index) => (
-                            <div className={`olk-home__get-started-section__item-container ${item.bgClassName}`} key={index}>
+                            <div className='olk-home__get-started-section__item-container' key={index} style={{ '--bg-get-started-desktop': `url('${isProd ? basePath + item.desktopImgPath : item.desktopImgPath}')`, '--bg-get-started-mobile': `url('${isProd ? basePath + item.mobileImgPath : item.mobileImgPath}')` } as React.CSSProperties}>
                                 <div className="olk-home__get-started-section__item-container__content-container">
                                     <h5 className="olk-home__get-started-section__item-container__content-container__heading font-18">{item.header}</h5>
                                     <div className="olk-home__get-started-section__item-container__content-container__text-container">
@@ -202,7 +176,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="olk-home__status-section">
-                    {[{value: '546+', name: 'Registered Riders'}, {value: '789,900+', name: 'Orders Delivered'}, {value: '690+', name: 'Restaurants Partnered'}, {value: '17,457+', name: 'Food Items'}].map((item, index) => (
+                    {[{ value: '546+', name: 'Registered Riders' }, { value: '789,900+', name: 'Orders Delivered' }, { value: '690+', name: 'Restaurants Partnered' }, { value: '17,457+', name: 'Food Items' }].map((item, index) => (
                         <div className="olk-home__status-section__item" key={index}>
                             <p className="olk-home__status-section__item__value font-64">{item.value}</p>
                             <p className="olk-home__status-section__item__name font-24">{item.name}</p>

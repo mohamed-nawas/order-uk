@@ -1,30 +1,20 @@
 export default function Footer() {
+    const isProd = process.env.NODE_ENV === 'production';
+    const basePath = import.meta.env.BASE_URL;
     return (
         <footer className="olk-footer">
             <div className="olk-footer__contact-section">
                 <div className="olk-footer__contact-section__banner-section">
                     {
-                        process.env.NODE_ENV === 'production' ? (
-                            <img src={`${import.meta.env.BASE_URL}/icons/logo-main-2.png`} alt="OrderUK Logo" className="olk-footer__contact-section__banner-section__img" />
-                        ) : (
-                            <img src="icons/logo-main-2.png" alt="OrderUK Logo" className="olk-footer__contact-section__banner-section__img" />
-                        )
+                        <img className="olk-footer__contact-section__banner-section__img" alt="OrderUK Logo" src={isProd ? `${basePath}/icons/logo-main-2.png` : 'icons/logo-main-2.png'} />
                     }
                     <div className="olk-footer__contact-section__banner-section__buttons-container">
                         {
-                            process.env.NODE_ENV === 'production' ? (
-                                [`${import.meta.env.BASE_URL}/icons/apple-play-ico.png`, `${import.meta.env.BASE_URL}/icons/google-play-ico.png`].map((icon, index) => (
-                                    <div className="olk-footer__contact-section__banner-section__buttons-container__item" key={index}>
-                                        <img src={icon} alt="Icons" />
-                                    </div>
-                                ))
-                            ) : (
-                                ['icons/apple-play-ico.png', 'icons/google-play-ico.png'].map((icon, index) => (
-                                    <div className="olk-footer__contact-section__banner-section__buttons-container__item" key={index}>
-                                        <img src={icon} alt="Icons" />
-                                    </div>
-                                ))
-                            )
+                            ['icons/apple-play-ico.png', 'icons/google-play-ico.png'].map((icon, index) => (
+                                <div className="olk-footer__contact-section__banner-section__buttons-container__item" key={index}>
+                                    {isProd ? (<img src={`${basePath}/${icon}`} alt="Icons" />) : (<img src={icon} alt="Icons" />)}
+                                </div>
+                            ))
                         }
                     </div>
                     <p className="olk-footer__contact-section__banner-section__description font-15">Company # 490039-445, Registered with House of companies</p>
@@ -38,19 +28,11 @@ export default function Footer() {
                     <p className="olk-footer__contact-section__social-section__link font-13">we wont spam, read our <span>email policy</span></p>
                     <div className="olk-footer__contact-section__social-section__icons-container">
                         {
-                            process.env.NODE_ENV === 'production' ? (
-                                [`${import.meta.env.BASE_URL}/icons/facebook-ico.png`, `${import.meta.env.BASE_URL}/icons/instagram-ico.png`, 'icons/tiktok-ico.png', 'icons/snapchat-ico.png'].map((icon, index) => (
-                                    <div className="olk-footer__contact-section__social-section__icons-container__item" key={index}>
-                                        <img src={icon} alt="Icons" />
-                                    </div>
-                                ))
-                            ) : (
-                                ['icons/facebook-ico.png', 'icons/instagram-ico.png', 'icons/tiktok-ico.png', 'icons/snapchat-ico.png'].map((icon, index) => (
-                                    <div className="olk-footer__contact-section__social-section__icons-container__item" key={index}>
-                                        <img src={icon} alt="Icons" />
-                                    </div>
-                                ))
-                            )
+                            ['icons/facebook-ico.png', 'icons/instagram-ico.png', 'icons/tiktok-ico.png', 'icons/snapchat-ico.png'].map((icon, index) => (
+                                <div className="olk-footer__contact-section__social-section__icons-container__item" key={index}>
+                                    {isProd ? (<img src={`${basePath}/${icon}`} alt="Icons" />) : (<img src={icon} alt="Icons" />)}
+                                </div>
+                            ))
                         }
                     </div>
                 </div>

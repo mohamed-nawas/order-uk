@@ -347,6 +347,11 @@
             aspect-ratio: 1.78;
             display: grid;
             place-items: center;
+            background: var(--bg-get-started-desktop), linear-gradient(225deg, var(--color-absolute-white) 0%, var(--color-black-02) 58%, var(--color-black-02) 100%);
+            @include screens.max-md1 { background: var(--bg-get-started-mobile), linear-gradient(225deg, var(--color-absolute-white) 0%, var(--color-black-02) 58%, var(--color-black-02) 100%); }
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             &__content-container {
                 width: 70%;
                 height: 100%;
@@ -518,24 +523,5 @@
             &__name { font-weight: 700; }
             @include screens.max-sm4 { &__value { font-size: 14.88vw; } &__name { font-size: 5.58vw; } }
         }
-    }
-}
-
-.started-bg-1 { 
-    background: url('images/started-main-bg-1.png'), linear-gradient(225deg, var(--color-absolute-white) 0%, var(--color-black-02) 58%, var(--color-black-02) 100%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    @include screens.max-md1 { 
-        background: url('images/started-sub-bg-1.png'), linear-gradient(225deg, var(--color-absolute-white) 0%, var(--color-black-02) 58%, var(--color-black-02) 100%); 
-    }
-}
-.started-bg-2 { 
-    background: url('images/started-main-bg-2.png'), linear-gradient(225deg, var(--color-absolute-white) 0%, var(--color-black-02) 58%, var(--color-black-02) 100%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    @include screens.max-md1 { 
-        background: url('images/started-sub-bg-2.png'), linear-gradient(225deg, var(--color-absolute-white) 0%, var(--color-black-02) 58%, var(--color-black-02) 100%); 
     }
 }
